@@ -1,10 +1,28 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {withValidator, ValidField} from 'react-validex'
 
-import { ExampleComponent } from 'react-validex'
-import 'react-validex/dist/index.css'
+const App = ({validator}) => {
 
-const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const [state, setState] = useState({
+    user_name: ''
+  })
+
+  useEffect(() => {
+    validator.validate()
+  }, [state])
+
+  return <div>
+    <ValidField
+      nameAlias="User Name"
+      name="user_name"
+      value={state.user_name}
+      validator={validator}
+      min={10}
+      showError
+    >
+      <input type="text" value={state.user_name} onChange={(e) => setState({...state, user_name: e.target.value})}/>
+    </ValidField>
+  </div>
 }
 
-export default App
+export default withValidator(App)
