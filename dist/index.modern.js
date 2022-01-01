@@ -2,6 +2,39 @@ import React, { useRef, useState, Fragment as Fragment$1 } from 'react';
 import validex from 'validex';
 export { default as validex } from 'validex';
 
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
@@ -1101,32 +1134,35 @@ if (process.env.NODE_ENV !== 'production') {
 }
 });
 
-const withValidator = Comp => {
-  return props => {
-    const ref = useRef();
-    const [, setState] = useState();
+var _excluded = ["children", "name", "validator", "value", "showError"];
+var withValidator = function withValidator(Comp) {
+  return function (props) {
+    var ref = useRef();
+
+    var _useState = useState(),
+        setState = _useState[1];
 
     if (!ref.current) {
       ref.current = validex();
 
-      ref.current.callback = () => {
+      ref.current.callback = function () {
         setState(Math.random());
       };
     }
 
-    return /*#__PURE__*/React.createElement(Fragment$1, null, /*#__PURE__*/React.createElement(Comp, Object.assign({}, props, {
+    return /*#__PURE__*/React.createElement(Fragment$1, null, /*#__PURE__*/React.createElement(Comp, _extends({}, props, {
       validator: ref.current
     })));
   };
 };
-const ValidField = ({
-  children,
-  name,
-  validator,
-  value,
-  showError,
-  ...schema
-}) => {
+var ValidField = function ValidField(_ref) {
+  var children = _ref.children,
+      name = _ref.name,
+      validator = _ref.validator,
+      value = _ref.value,
+      showError = _ref.showError,
+      schema = _objectWithoutPropertiesLoose(_ref, _excluded);
+
   if (!validator) {
     return children;
   }

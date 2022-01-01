@@ -39,6 +39,8 @@ const Form = ({validator}) => {
     </ValidField>
   </div>
 }
+
+export default withValidator(Form)
 ```
 
 
@@ -47,7 +49,7 @@ const Form = ({validator}) => {
 |Name| Description|
 | --- | --- |
 |`children`| `element required`|
-|`validator`| validator instance |
+|`validator`| validator instance `required`|
 |`name`| field name `required` |
 |`value`| field value `required` |
 |`showError`| show the error bellow `boolean` |
