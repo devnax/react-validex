@@ -1,7 +1,7 @@
 {
   "name": "react-validex",
-  "version": "1.0.0",
-  "description": "Made with create-react-library",
+  "version": "1.0.1",
+  "description": "Fast and simple data validator for React",
   "author": "Naxrul Ahmed",
   "license": "MIT",
   "repository": "Naxrul Ahmed/react-validex",
