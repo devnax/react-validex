@@ -36,7 +36,7 @@ export const ValidField = ({ children, name, validator, value, showError, ...sch
         <Fragment>
             {children}
             {
-                showError && <p style={{ color: '#e74c3c', fontSize: 13, padding: 0, margin: '4px 0 0 0' }}>{validator.errorMessage(name)}</p>
+                showError && <p style={{ color: '#e74c3c', fontSize: 13, padding: 0, margin: '4px 0 0 0' }}>{validator.getError(name)}</p>
             }
         </Fragment>
     )
@@ -81,7 +81,7 @@ ValidField.propTypes = {
     minWords: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
     maxWords: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
     notAllowedChars: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    notAllowedCharters: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
+    notAllowedCharaters: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
     notAllowedNumber: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
     notAllowedSpecialChars: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
     notAllowedWords: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),

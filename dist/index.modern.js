@@ -1177,7 +1177,7 @@ var ValidField = function ValidField(_ref) {
       padding: 0,
       margin: '4px 0 0 0'
     }
-  }, validator.errorMessage(name)));
+  }, validator.getError(name)));
 };
 ValidField.propTypes = {
   children: propTypes.oneOfType([propTypes.element, propTypes.arrayOf(propTypes.element)]).isRequired,
@@ -1202,7 +1202,7 @@ ValidField.propTypes = {
   minWords: propTypes.oneOfType([propTypes.number, propTypes.array]),
   maxWords: propTypes.oneOfType([propTypes.number, propTypes.array]),
   notAllowedChars: propTypes.oneOfType([propTypes.string, propTypes.array]),
-  notAllowedCharters: propTypes.oneOfType([propTypes.bool, propTypes.array]),
+  notAllowedCharaters: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   notAllowedNumber: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   notAllowedSpecialChars: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   notAllowedWords: propTypes.oneOfType([propTypes.string, propTypes.array]),

@@ -57,7 +57,3 @@ export default withValidator(Form)
 
 
 > Please flow the [validex](https://www.npmjs.com/package/validex) for the validator props
-
-## License
-
-MIT © [Naxrul Ahmed](https://github.com/Naxrul Ahmed)
