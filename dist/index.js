@@ -2,7 +2,8 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var React = require('react');
 var React__default = _interopDefault(React);
-var validex = _interopDefault(require('validex'));
+var validex = require('validex');
+var validex__default = _interopDefault(validex);
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -1145,7 +1146,7 @@ var withValidator = function withValidator(Comp) {
         setState = _useState[1];
 
     if (!ref.current) {
-      ref.current = validex();
+      ref.current = validex__default();
 
       ref.current.callback = function () {
         setState(Math.random());
@@ -1186,6 +1187,7 @@ ValidField.propTypes = {
   name: propTypes.string.isRequired,
   value: propTypes.any.isRequired,
   showError: propTypes.bool,
+  type: propTypes.oneOfType([propTypes.oneOf(['number', 'string', 'array', 'object']), propTypes.array]),
   compare: propTypes.oneOfType([propTypes.func, propTypes.array]),
   hex: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   lowercase: propTypes.oneOfType([propTypes.bool, propTypes.array]),
@@ -1195,18 +1197,30 @@ ValidField.propTypes = {
   required: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   min: propTypes.oneOfType([propTypes.number, propTypes.array]),
   max: propTypes.oneOfType([propTypes.number, propTypes.array]),
-  email: propTypes.oneOfType([propTypes.string, propTypes.array]),
+  email: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   equal: propTypes.oneOfType([propTypes.string, propTypes.array]),
   maxNumberRange: propTypes.oneOfType([propTypes.oneOfType([propTypes.string, propTypes.number]), propTypes.array]),
   minNumberRange: propTypes.oneOfType([propTypes.oneOfType([propTypes.string, propTypes.number]), propTypes.array]),
   minWords: propTypes.oneOfType([propTypes.number, propTypes.array]),
   maxWords: propTypes.oneOfType([propTypes.number, propTypes.array]),
   notAllowedChars: propTypes.oneOfType([propTypes.string, propTypes.array]),
-  notAllowedSpecialChars: propTypes.oneOfType([propTypes.string, propTypes.array]),
+  notAllowedCharters: propTypes.oneOfType([propTypes.bool, propTypes.array]),
+  notAllowedNumber: propTypes.oneOfType([propTypes.bool, propTypes.array]),
+  notAllowedSpecialChars: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   notAllowedWords: propTypes.oneOfType([propTypes.string, propTypes.array]),
-  type: propTypes.oneOfType([propTypes.oneOf(['number', 'string', 'array', 'object']), propTypes.array])
+  regex: propTypes.oneOfType([propTypes.instanceOf(RegExp), propTypes.array]),
+  mediumPassword: propTypes.oneOfType([propTypes.bool, propTypes.array]),
+  strongPassword: propTypes.oneOfType([propTypes.bool, propTypes.array])
 };
 
+Object.keys(validex).forEach(function (k) {
+  if (k !== 'default') Object.defineProperty(exports, k, {
+    enumerable: true,
+    get: function () {
+      return validex[k];
+    }
+  });
+});
 exports.validex = validex;
 exports.ValidField = ValidField;
 exports.withValidator = withValidator;

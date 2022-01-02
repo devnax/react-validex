@@ -2,6 +2,7 @@ import React, {Fragment, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import validex from 'validex'
 
+export * from 'validex'
 export {validex}
 
 export const withValidator = (Comp) => {
@@ -54,6 +55,10 @@ ValidField.propTypes = {
     showError: PropTypes.bool,
 
     // validator props
+    type: PropTypes.oneOfType([
+        PropTypes.oneOf(['number', 'string', 'array', 'object']), 
+        PropTypes.array
+    ]),
     compare: PropTypes.oneOfType([PropTypes.func, PropTypes.array]),
     hex: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
     lowercase: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
@@ -63,7 +68,7 @@ ValidField.propTypes = {
     required: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
     min: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
     max: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
-    email: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    email: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
     equal: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     maxNumberRange: PropTypes.oneOfType([
         PropTypes.oneOfType([PropTypes.string, PropTypes.number]), 
@@ -76,12 +81,13 @@ ValidField.propTypes = {
     minWords: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
     maxWords: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
     notAllowedChars: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    notAllowedCharters: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
+    notAllowedNumber: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
     notAllowedSpecialChars: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
     notAllowedWords: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-    type: PropTypes.oneOfType([
-        PropTypes.oneOf(['number', 'string', 'array', 'object']), 
-        PropTypes.array
-    ]),
+    regex: PropTypes.oneOfType([PropTypes.instanceOf(RegExp), PropTypes.array]),
+    mediumPassword: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
+    strongPassword: PropTypes.oneOfType([PropTypes.bool, PropTypes.array])    
 }
 
 
