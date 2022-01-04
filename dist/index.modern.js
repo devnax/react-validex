@@ -1202,7 +1202,7 @@ ValidField.propTypes = {
   minWords: propTypes.oneOfType([propTypes.number, propTypes.array]),
   maxWords: propTypes.oneOfType([propTypes.number, propTypes.array]),
   notAllowedChars: propTypes.oneOfType([propTypes.string, propTypes.array]),
-  notAllowedCharaters: propTypes.oneOfType([propTypes.bool, propTypes.array]),
+  notAllowedCharacters: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   notAllowedNumber: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   notAllowedSpecialChars: propTypes.oneOfType([propTypes.bool, propTypes.array]),
   notAllowedWords: propTypes.oneOfType([propTypes.string, propTypes.array]),
