@@ -87,7 +87,12 @@ ValidField.propTypes = {
     notAllowedWords: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
     regex: PropTypes.oneOfType([PropTypes.instanceOf(RegExp), PropTypes.array]),
     mediumPassword: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
-    strongPassword: PropTypes.oneOfType([PropTypes.bool, PropTypes.array])    
+    strongPassword: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
+    notEqualWith: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    oneOf: PropTypes.array,
+    oneOfType: PropTypes.array,
+    shape: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    exact: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 }
 
 
