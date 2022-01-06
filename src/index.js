@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import validex from 'validex'
 
 export * from 'validex'
-export {validex}
 
 export const withValidator = (Comp) => {
     

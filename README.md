@@ -13,7 +13,7 @@ npm install --save react-validex
 ## Usage
 
 ```jsx
-import {withValidator, ValidField, validex} from 'react-validex'
+import {withValidator, ValidField} from 'react-validex'
 
 const Form = ({validator}) => {
 

@@ -1,6 +1,6 @@
 {
   "name": "react-validex",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Fast and simple data validator for React",
   "author": "Naxrul Ahmed",
   "license": "MIT",
@@ -52,6 +52,6 @@
     "dist"
   ],
   "dependencies": {
-    "validex": "^1.0.7"
+    "validex": "^1.1.0"
   }
 }
