@@ -1226,7 +1226,6 @@ Object.keys(validex).forEach(function (k) {
     }
   });
 });
-exports.validex = validex;
 exports.ValidField = ValidField;
 exports.withValidator = withValidator;
 //# sourceMappingURL=index.js.map

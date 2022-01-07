@@ -1,7 +1,6 @@
 import React, { useRef, useState, Fragment as Fragment$1 } from 'react';
 import validex__default from 'validex';
 export * from 'validex';
-export { default as validex } from 'validex';
 
 function _extends() {
   _extends = Object.assign || function (target) {
