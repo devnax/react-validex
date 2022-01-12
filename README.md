@@ -46,14 +46,14 @@ export default withValidator(Form)
 
 ## Props
 
-|Name| Description|
-| --- | --- |
-|`children`| `element required`|
-|`validator`| validator instance `required`|
-|`name`| field name `required` |
-|`value`| field value `required` |
-|`showError`| show the error bellow `boolean` |
+| Name        | Description                     |
+| ----------- | ------------------------------- |
+| `children`  | `element required`              |
+| `validator` | validator instance `required`   |
+| `name`      | field name `required`           |
+| `value`     | field value `required`          |
+| `showError` | show the error bellow `boolean` |
 
 
 
-> Please flow the [validex](https://www.npmjs.com/package/validex) for the validator props
+> Please follow the [validex](https://www.npmjs.com/package/validex) for the validator props

@@ -92,6 +92,7 @@ ValidField.propTypes = {
     oneOfType: PropTypes.array,
     shape: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     exact: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    date: PropTypes.oneOfType([PropTypes.bool, PropTypes.array]),
 }
 
 

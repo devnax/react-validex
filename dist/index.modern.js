@@ -1212,7 +1212,8 @@ ValidField.propTypes = {
   oneOf: propTypes.array,
   oneOfType: propTypes.array,
   shape: propTypes.oneOfType([propTypes.object, propTypes.array]),
-  exact: propTypes.oneOfType([propTypes.object, propTypes.array])
+  exact: propTypes.oneOfType([propTypes.object, propTypes.array]),
+  date: propTypes.oneOfType([propTypes.bool, propTypes.array])
 };
 
 export { ValidField, withValidator };
