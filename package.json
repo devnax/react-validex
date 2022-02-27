@@ -62,6 +62,6 @@
     "dist"
   ],
   "dependencies": {
-    "validex": "^1.1.5"
+    "validex": "^1.1.6"
   }
 }
